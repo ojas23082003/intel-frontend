@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
+import ReactAudioPlayer from 'react-audio-player';
 
 function App() {
   const [res_display,setDisplay] = useState("none");
@@ -34,6 +35,11 @@ function App() {
     <div className="App">
 
       <div className='centre'>
+        {/* <ReactAudioPlayer
+          src="my_audio_file.ogg"
+          autoPlay
+          controls
+        /> */}
         <div className='glass-card' style={{justifyContent:just_con}}>
           <div className='form-input' style={{width:form_width}}>
             <Form.Group className="mb-3 input-fields" style={{width:inp_width}} controlId="exampleForm.ControlInput1">
@@ -56,7 +62,22 @@ function App() {
               </Button>{' '}
             </Form.Group>
           </div>
-          <div className='response arvo-bold' style={{display:res_display}}>
+          {/* <div >
+            <ReactAudioPlayer
+              src="my_audio_file.ogg"
+              autoPlay
+              controls
+            />
+          </div> */}
+          <div className='response arvo-bold' style={{display:res_display,"overflowY":"auto"}}>
+            <div style={{"width":"100%"}}>
+              <ReactAudioPlayer
+                src="my_audio_file.ogg"
+                autoPlay
+                controls
+                style={{"width":"100%","marginBottom":"10px"}}
+              />
+            </div>
             {text}
           </div>
         </div>
